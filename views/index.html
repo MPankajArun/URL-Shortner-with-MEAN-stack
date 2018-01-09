@@ -9,11 +9,130 @@
         <title>URL Shortner built with MEAN Stack</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="d:\UI Workspace\Good Work\URL Shortner in MEAN Stack\public\css\bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Custom -->
+        <link href="d:\UI Workspace\Good Work\URL Shortner in MEAN Stack\public\css\style.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-app="urlShortner">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <nav class="nvabar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron" style="margin-top: 50px;">
+            <div class="container">
+                <h1>
+                    <img src="https://a.slack-edge.com/0180/img/emoji_270c_fade.gif" style="width: 50px; margin-bottom: 4px;" alt="emoji victory">
+                        URL Shortening Service
+                </h1>
+                <p>This project is a URL shortening service similar to sites like bitly.com using Node.js, Express, MongoDB and Angular (MEAN stack). Express will be used to handle our routing and redirection, while MongoDB takes care of storing and looking up the shortened links.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="container">
+                <h1>Useage</h1>
+                <ul>
+                    <li>Type your original link in the right box, select your short link preference.</li>
+                    <li>Click the "Generate", and then you will get the results.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+                
+            <main class="row">
+                <section class="col-md-7">
+                    <div class="entry-header">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h2><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> All Links</h2>
+                            </div>
+                        </div>
+                    <hr />
+                    <div class="entry-content" ng-controller="listController">
+                        <div class="entry-single-title">
+                            <div class="col-md-7">
+                                <strong>Long Url (Original)</strong>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Short Url (New)</strong>
+                            </div>
+                            <div class="col-md-2">
+                                <strong>Created At</strong>
+                            </div>
+                        </div>
+                        <div class="entry-repeat" ng-repeat="row in list">
+                            <div class="entry-single">
+                                <div class="col-md-7">
+                                    <a ng-href="{{row.long_url}}">{{row.long_url}}</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a ng-href="{{row.short_url}}">{{row.short_url}}</a>
+                                </div>
+                                <div class="col-md-2">
+                                    {{row.timestamp || date}}
+                                </div>
+                            </div>
+                        </div>
+                                    
+                    </div>
+                </div>
+                        
+                </section>
+                <section class="col-md-5" ng-controller="postController">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a link</h2>
+                        </div>
+                    </div>
+                    <hr />
+                    <form id="new-entry-form" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="long-url">Long URL</label>
+                            <div class="col-md-9">
+                                <textarea rows="4" name="longurl" class="form-control" id="longurl" ng-model="longurl"></textarea>
+                                <span ng-show="errorLongUrl">{{errorLongUrl}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="type">Characters</label>
+                            <div class="col-md-9">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="type" value="5" checked>5
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="type" value="7">7
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3" ng-model="type" value="0">Random
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger hidden" role="alert" id="create-error"><%= loadError%></div>
+                            <div class="alert alert-success hidden" role="alert" id="create-success"></div>
+                            <button type="submit" ng-click="submitForm()" class="btn btn-primary col-md-offset-4" style="margin-top: 10px; margin-bottom: 100px;">Generate
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </button>
+                    </form>
+                </section>
         
+            </main>
+        </div>
     </body>
 </html>

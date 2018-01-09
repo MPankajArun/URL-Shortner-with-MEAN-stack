@@ -8,14 +8,14 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/ryani33/URL-Shortener-With-MEAN-Stack.git"
+      "url": "git+https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack.git"
     },
     "author": "Pankaj Meshram",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/ryani33/URL-Shortener-With-MEAN-Stack/issues"
+      "url": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack/issues"
     },
-    "homepage": "https://github.com/ryani33/URL-Shortener-With-MEAN-Stack#readme",
+    "homepage": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack#readme",
     "dependencies": {
       "body-parser": "^1.15.2",
       "express": "^4.13.4",
