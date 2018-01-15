@@ -1,27 +1,27 @@
 {
-    "name": "url-shortener-with-mean-stack",
-    "version": "1.0.0",
-    "description": "This project is a URL shortening service similar to sites like bitly.com using Node.js, Express, MongoDB and Angular (MEAN stack).",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack.git"
-    },
-    "author": "Pankaj Meshram",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack/issues"
-    },
-    "homepage": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack#readme",
-    "dependencies": {
-      "body-parser": "^1.15.2",
-      "express": "^4.13.4",
-      "mongodb": "^2.1.7",
-      "os": "^0.1.1",
-      "path": "^0.12.7",
-      "request-promise": "^2.0.0"
-    }
+  "name": "url-shortener-with-mean-stack",
+  "version": "1.0.0",
+  "description": "This project is a URL shortening service similar to sites like bitly.com using Node.js, Express, MongoDB and Angular (MEAN stack).",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack.git"
+  },
+  "author": "Pankaj Meshram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack/issues"
+  },
+  "homepage": "https://github.com/MPankajArun/URL-Shortner-with-MEAN-stack#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "request-promise": "^2.0.0"
   }
+}
